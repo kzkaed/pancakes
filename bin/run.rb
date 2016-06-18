@@ -1,0 +1,3 @@
+require 'pancakes'
+
+Pancakes.new
