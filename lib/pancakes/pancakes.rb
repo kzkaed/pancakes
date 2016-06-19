@@ -1,7 +1,7 @@
 module Pancakes
   class Pancakes
 
-    attr_accessor :bowl, :pan, :plate
+    attr_accessor :batter, :bowl, :pan, :plate, :count
 
     FLOUR = "1 cup flour"
     BAKING_POWDER = "3 teaspoons baking powder"
@@ -15,51 +15,66 @@ module Pancakes
       @bowl = []
       @pan = []
       @plate = []
+      @batter = []
+      @count = 0
       dry_ingredients = [FLOUR, BAKING_POWDER, SALT, SUGAR]
       wet_ingredients = [MILK, EGG, BUTTER]
       make_pancakes(dry_ingredients, wet_ingredients)
     end
 
     def make_pancakes (dry_ingredients, wet_ingredients)
-      mix (dry_ingredients)
-      mix (wet_ingredients)
-      heat (pan)
-      batter = remove_from_bowl ()
-      pour (batter)
-      brown ()
-      serve ()
+      mix(dry_ingredients)
+      mix(wet_ingredients)
+      heat_pan()
+      pour_batter()
+      cook_batter()
+      serve_pancakes()
     end
 
+    private
     def mix (ingredients)
-      @bowl << ingredients
-      print(@bowl)
+      puts("MIXING INGREDIENTS")
+      @bowl << ingredients.shuffle
+      puts(remove_from_bowl(@bowl))
+      if(all_ingredients_mixed?)
+        @batter << "Batter"
+        puts @batter
+      end
     end
 
-    def pour (batter)
-      @pan << batter
+    def heat_pan ()
+      puts("HEATING PAN")
+      @pan << "Heated Pan"
+      puts pan
     end
 
-    def heat (pan)
-      pan << "I am heated"
+    def pour_batter
+      puts "POURING BATTER IN PAN"
+      @pan << @batter
+      puts @pan
     end
 
-    def brown (pan_with_batter)
-      puts pan_with_batter
-      pan_with_batter
+    def cook_batter
+      puts("COOKING BATTER")
+      @pan << "Cooked Pancakes"
     end
 
-    def serve (cooked_pancakes_in_pan)
-      pancakes =
-          remove_from_pan(cooked_pancakes_in_pan);
-      print(pancakes)
+    def serve_pancakes
+      puts("SERVING PANCAKES")
+      puts(remove_from_pan(@pan))
     end
 
-    def remove_from_pan (cooked_pancakes_in_pan)
-      #cooked_pancakes_in_pan.pop
+    def all_ingredients_mixed?
+      @count = @count + 1
+      @count == 2
     end
 
-    def remove_from_bowl (batter_in_bowl)
-      batter_in_bowl.pop
+    def remove_from_pan (pan)
+      pan.pop
+    end
+
+    def remove_from_bowl (bowl)
+      bowl.pop
     end
 
   end

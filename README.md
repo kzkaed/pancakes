@@ -9,3 +9,4 @@ Educators for preschool through 12th grade can attend the IDEA:TE (Innovation, D
 
 
 
+##example of making pancakes (with lots of state - dont't thread this!) - puts to console the steps and results.
