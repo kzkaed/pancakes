@@ -1,3 +1,6 @@
-require 'pancakes'
+require_relative '../lib/pancakes/pancakes'
+require_relative '../lib/pancakes/test'
 
-Pancakes.new
+Pancakes::Test.new
+Pancakes::Pancakes.new
+
