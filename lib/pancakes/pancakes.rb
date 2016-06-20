@@ -25,10 +25,10 @@ module Pancakes
     def make_pancakes (dry_ingredients, wet_ingredients)
       mix(dry_ingredients)
       mix(wet_ingredients)
-      heat_pan()
-      pour_batter()
-      cook_batter()
-      serve_pancakes()
+      heat_pan
+      pour_batter
+      cook_batter
+      serve_pancakes
     end
 
     private
@@ -36,7 +36,7 @@ module Pancakes
       puts("MIXING INGREDIENTS")
       @bowl << ingredients.shuffle
       puts(remove_from_bowl(@bowl))
-      if(all_ingredients_mixed?)
+      if all_ingredients_mixed?
         @batter << "Batter"
         puts @batter
       end
