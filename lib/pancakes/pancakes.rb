@@ -19,7 +19,9 @@ module Pancakes
       @count = 0
       dry_ingredients = [FLOUR, BAKING_POWDER, SALT, SUGAR]
       wet_ingredients = [MILK, EGG, BUTTER]
+
       make_pancakes(dry_ingredients, wet_ingredients)
+
     end
 
     def make_pancakes (dry_ingredients, wet_ingredients)
