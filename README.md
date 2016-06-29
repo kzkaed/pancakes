@@ -9,4 +9,4 @@ Educators for preschool through 12th grade can attend the IDEA:TE (Innovation, D
 
 
 
-##Imperitive example of making pancakes (Warning- lots of state - dont't thread this!) - puts to console the steps and results.
+Imperitive example of making pancakes (Warning- lots of state) - puts to console the steps and results.
